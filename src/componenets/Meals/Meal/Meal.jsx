@@ -1,8 +1,12 @@
-import MealsSummary from "../MealsSummary";
+
+
+import MealsSummary from "./MealsSummary";
+import AvailableMeals from "./AvailableMeal";
 const Meals= () => {
   return (
    <>
     <MealsSummary/>
+    <AvailableMeals/>
    </>
   );
 };
