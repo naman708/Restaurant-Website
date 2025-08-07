@@ -1,0 +1,34 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; /* ensure it spans full viewport width */
+  height: 5rem;
+  background-color: #8a2b06;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0; /* allow space inside header */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  z-index: 10;
+}
+
+.main-image {
+  margin-top: 0rem; /* push down below the fixed header */
+  width: 100vw;     /* make image container full width */
+  height: 25rem;
+  overflow: hidden;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%); /* center the container if needed */
+  z-index: 0;
+}
+
+.main-image img {
+ margin-top: 0rem; /* push down below the fixed header */
+  width: 110vw; /* ensure image spills edge to edge */
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
