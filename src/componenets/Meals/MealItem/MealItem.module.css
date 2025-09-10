@@ -1,9 +1,32 @@
 .meal {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* info left, button right */
+  align-items: center;            /* vertical alignment */
   margin: 1rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid #ccc;
+}
+
+.mealInfo {
+  display: flex;
+  flex-direction: column; /* stack name, description, price vertically */
+}
+
+.meal button {
+  font: inherit;
+  cursor: pointer;
+  background-color: #4caf50;
+  color: white;
+  border: 1px solid #4caf50;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  margin: 0;           /* remove margin-top */
+  align-self: center;  /* vertically center next to info */
+}
+
+.meal button:hover {
+  background-color: #45a049;
+  border-color: #45a049;
 }
 
 .meal h3 {

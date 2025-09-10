@@ -1,16 +1,19 @@
 import classes from './MealItem.module.css';
 
-const MealItem = (props) => {
-  const price = `$${props.price.toFixed(2)}`;
+const MealItem = ({ name, description, price, onAdd }) => {
+  const formattedPrice = `$${price.toFixed(2)}`;
 
   return (
     <li className={classes.meal}>
-      <div>
-        <h3>{props.name}</h3>
-        <div className={classes.description}>{props.description}</div>
-        <div className={classes.price}>{price}</div>
+      {/* Left side: meal info */}
+      <div className={classes.mealInfo}>
+        <h3>{name}</h3>
+        <div className={classes.description}>{description}</div>
+        <div className={classes.price}>{formattedPrice}</div>
       </div>
-      <div></div>
+
+      {/* Right side: button */}
+      <button onClick={onAdd}>Add</button>
     </li>
   );
 };

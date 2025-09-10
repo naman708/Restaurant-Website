@@ -43,6 +43,7 @@ const AvailableMeals = () => {
     <section className={classes.meals}>
       <Card>
         <ul>{mealsList}</ul>
+       
       </Card>
     </section>
   );

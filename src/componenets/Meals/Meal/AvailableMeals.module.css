@@ -10,6 +10,20 @@
   margin: 0;
   padding: 0;
 }
+.meal {
+  display: flex;
+  justify-content: space-between; /* or flex-start if needed */
+  align-items: flex-start;
+  margin: 1rem 0;
+  padding: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+
+.meal > div {
+  display: flex;
+  flex-direction: column; /* ensure button is below text */
+}
+
 
 @keyframes meals-appear {
   from {
