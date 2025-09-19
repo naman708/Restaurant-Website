@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./CartModal.css";
 
-const CartModal = () => {
+const CartModal = ({ onClose }) => {
   const cartItems = [
     { id: 'm1', name: 'Sushi', description: 'Finest fish and veggies', price: 22.99, amount: 2 },
     { id: 'm2', name: 'Schnitzel', description: 'A german specialty!', price: 16.5, amount: 1 },
@@ -40,7 +40,7 @@ const CartModal = () => {
           <span>${totalAmount}</span>
         </div>
         <div className="cart-actions">
-          <button className="close-btn">Close</button>
+          <button className="close-btn" onClick={onClose}>Close</button>
           <button className="order-btn">Order</button>
         </div>
       </div>

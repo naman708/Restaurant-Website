@@ -7,12 +7,12 @@ import CartModal from './componenets/Cart/CartModal.jsx'
 import './App.css'
 
 function App() {
-
+const [modal,setModal] = useState(true);
 
   return (
     <>
-    <CartModal/>
-     <Header/>
+     {modal && <CartModal onClose={() => setModal(false)} />}
+     <Header onShowCart={()=>setModal(true)}/>
      <main>
       <Meals />
      </main>
