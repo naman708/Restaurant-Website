@@ -38,6 +38,7 @@ const CartProvider =({children})=>{
        totalAmount:0
     });
     const addItemHandler = (item)=>{
+        console.log("🚀 ~ addItemHandler ~ item:", item)
         dispatchCartAction({type:"ADD",item});
     };
     const removeItemHandler =(id)=>{
