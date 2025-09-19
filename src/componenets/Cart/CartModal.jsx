@@ -1,16 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./CartModal.css";
+import CartContext from "./CartContext";
+import { useContext } from "react";
 
 const CartModal = ({ onClose }) => {
-  const cartItems = [
+ const cartCtx= useContext(CartContext);
+ let cartItems = [
     { id: 'm1', name: 'Sushi', description: 'Finest fish and veggies', price: 22.99, amount: 2 },
     { id: 'm2', name: 'Schnitzel', description: 'A german specialty!', price: 16.5, amount: 1 },
     { id: 'm3', name: 'Barbecue Burger', description: 'American, raw, meaty', price: 12.99, amount: 3 },
     { id: 'm4', name: 'Green Bowl', description: 'Healthy...and green...', price: 18.99, amount: 1 },
   ];
 
-  const totalAmount = cartItems
+  const totalAmount = cartCtx.items
     .reduce((acc, item) => acc + item.price * item.amount, 0)
     .toFixed(2);
 
@@ -19,7 +22,7 @@ const CartModal = ({ onClose }) => {
       <div className="cart-modal">
         <h2>Your Cart</h2>
         <ul>
-          {cartItems.map((item) => (
+          {cartCtx.items.map((item) => (
             <li key={item.id}>
               <div>
                 <h3>{item.name}</h3>
@@ -29,8 +32,8 @@ const CartModal = ({ onClose }) => {
                 </div>
               </div>
               <div>
-                <button>−</button>
-                <button>+</button>
+                <button onClick={()=>cartCtx.removeItem(item.id)}>−</button>
+                <button onClick={()=>cartCtx.addItem(item)} >+</button>
               </div>
             </li>
           ))}

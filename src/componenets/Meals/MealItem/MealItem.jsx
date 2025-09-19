@@ -1,8 +1,9 @@
 import classes from './MealItem.module.css';
-
-const MealItem = ({ name, description, price, onAdd }) => {
+import CartContext from '../../Cart/CartContext';
+import { useContext } from 'react';
+const MealItem = ({id,name, description, price }) => {
   const formattedPrice = `$${price.toFixed(2)}`;
-
+  const cartCtx = useContext(CartContext)
   return (
     <li className={classes.meal}>
       {/* Left side: meal info */}
@@ -13,7 +14,7 @@ const MealItem = ({ name, description, price, onAdd }) => {
       </div>
 
       {/* Right side: button */}
-      <button onClick={onAdd}>Add</button>
+      <button onClick={()=>cartCtx.addItem({id,name,description,price,amount:1})}>Add</button>
     </li>
   );
 };
