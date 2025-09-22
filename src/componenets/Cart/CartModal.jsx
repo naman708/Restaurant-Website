@@ -12,10 +12,12 @@ const CartModal = ({ onClose }) => {
     { id: 'm3', name: 'Barbecue Burger', description: 'American, raw, meaty', price: 12.99, amount: 3 },
     { id: 'm4', name: 'Green Bowl', description: 'Healthy...and green...', price: 18.99, amount: 1 },
   ];
-
-  const totalAmount = cartCtx.items
+  let totalAmount = 0;
+  if(cartCtx.items.length>0){
+     totalAmount = cartCtx.items
     .reduce((acc, item) => acc + item.price * item.amount, 0)
     .toFixed(2);
+  }
 
   return ReactDOM.createPortal(
     <div className="cart-backdrop">
