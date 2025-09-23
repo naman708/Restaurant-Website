@@ -18,6 +18,7 @@
   width: 30rem;
   max-width: 90%;
   z-index: 1001;
+  overflow-y: auto;  
 }
 
 .cart-modal h2 {

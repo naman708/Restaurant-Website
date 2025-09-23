@@ -6,12 +6,6 @@ import { useContext } from "react";
 
 const CartModal = ({ onClose }) => {
  const cartCtx= useContext(CartContext);
- let cartItems = [
-    { id: 'm1', name: 'Sushi', description: 'Finest fish and veggies', price: 22.99, amount: 2 },
-    { id: 'm2', name: 'Schnitzel', description: 'A german specialty!', price: 16.5, amount: 1 },
-    { id: 'm3', name: 'Barbecue Burger', description: 'American, raw, meaty', price: 12.99, amount: 3 },
-    { id: 'm4', name: 'Green Bowl', description: 'Healthy...and green...', price: 18.99, amount: 1 },
-  ];
   let totalAmount = 0;
   if(cartCtx.items.length>0){
      totalAmount = cartCtx.items
@@ -20,7 +14,7 @@ const CartModal = ({ onClose }) => {
   }
 
   return ReactDOM.createPortal(
-    <div className="cart-backdrop">
+    <div className="cart-backdrop" onClick={onClose}>
       <div className="cart-modal">
         <h2>Your Cart</h2>
         <ul>
